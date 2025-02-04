@@ -1,0 +1,74 @@
+name: Build and Push Multi-Arch Docker Image
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU for cross-arch builds
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Clone frappe_docker
+        run: git clone https://github.com/frappe/frappe_docker && cd frappe_docker
+
+      - name: Create `apps.json`
+        run: |
+          echo '[
+            {
+              "url": "https://github.com/frappe/erpnext",
+              "branch": "version-15"
+            },
+            {
+              "url": "https://github.com/frappe/hrms",
+              "branch": "version-15"
+            },
+            {
+              "url": "https://github.com/frappe/payments",
+              "branch": "version-15"
+            },
+            {
+              "url": "https://github.com/yarsa/nepal-compliance.git",
+              "branch": "master"
+            }
+          ]' > apps.json
+
+      - name: Convert `apps.json` to Base64
+        run: echo "APPS_JSON_BASE64=$(base64 -w 0 -i apps.json)" >> $GITHUB_ENV
+
+      - name: Extract Git Tag (if applicable)
+        id: get_tag
+        run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Build and Push Multi-Arch Docker Image
+        run: |
+          cd frappe_docker
+          docker buildx build \
+            --platform linux/arm64,linux/amd64 \
+            --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
+            --build-arg FRAPPE_BRANCH=version-15 \
+            --build-arg PYTHON_VERSION=3.11.9 \
+            --build-arg NODE_VERSION=18.20.2 \
+            --build-arg APPS_JSON_BASE64=${{ env.APPS_JSON_BASE64 }} \
+            --tag narsadocker/test-compliance:latest \
+            --tag narsadocker/test-compliance:${{ env.TAG }} \
+            --file images/custom/Containerfile \
+            --push .
