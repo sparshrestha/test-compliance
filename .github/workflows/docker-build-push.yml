@@ -69,6 +69,5 @@ jobs:
             --build-arg NODE_VERSION=18.20.2 \
             --build-arg APPS_JSON_BASE64=${{ env.APPS_JSON_BASE64 }} \
             --tag narsadocker/test-compliance:latest \
-            --tag narsadocker/test-compliance:${{ env.TAG }} \
             --file images/custom/Containerfile \
             --push .
