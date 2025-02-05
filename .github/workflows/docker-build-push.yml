@@ -3,7 +3,7 @@ name: Build and Push Multi-Arch Docker Image
 on:
   push:
     branches:
-      - main
+      - master
     tags:
       - v*
 
@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Set up QEMU for cross-arch builds
-        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -62,13 +59,12 @@ jobs:
         run: |
           cd frappe_docker
           docker buildx build \
-            --platform linux/arm64,linux/amd64 \
+            --platform linux/amd64 \
             --build-arg FRAPPE_PATH=https://github.com/frappe/frappe \
             --build-arg FRAPPE_BRANCH=version-15 \
             --build-arg PYTHON_VERSION=3.11.9 \
             --build-arg NODE_VERSION=18.20.2 \
             --build-arg APPS_JSON_BASE64=${{ env.APPS_JSON_BASE64 }} \
             --tag narsadocker/test-compliance:latest \
-            --tag narsadocker/test-compliance:${{ env.TAG }} \
             --file images/custom/Containerfile \
             --push .
