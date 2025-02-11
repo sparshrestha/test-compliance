@@ -58,4 +58,4 @@ If you're interested in contributing to the project:
 * Start by reading our [Contributing Guide](/CONTRIBUTING.md).
 
 ### License
-Nepal Compliance is licensed under the GNU General Public License v3.0 (GPL-3.0). For more details, refer to the [LICENSE](/LICENSE) file.
+Nepal Compliance is licensed under the [GNU General Public License v3.0 (GPL-3.0)](/LICENSE).
