@@ -1,3 +1,4 @@
+[![Lint](https://github.com/sparshrestha/test-compliance/actions/workflows/super-linter.yml/badge.svg)](https://github.com/sparshrestha/test-compliance/actions/workflows/super-linter.yml)
 [![CodeQL Advanced](https://github.com/sparshrestha/test-compliance/actions/workflows/codeql.yml/badge.svg)](https://github.com/sparshrestha/test-compliance/actions/workflows/codeql.yml)
 [![Build and Push amd64 Docker Image](https://github.com/sparshrestha/test-compliance/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/sparshrestha/test-compliance/actions/workflows/docker-build-push.yml)
 
