@@ -1,14 +1,27 @@
-name: Linters
+name: semgrep rules - Frappe Linter
+# These rules guard against typical mistakes or bad practices while working on Frappe Framework apps.
 
 on:
+  push:
+    paths-ignore:
+      - '**/*.md'
   pull_request: { }
+  
+env:
+  TZ: /usr/share/zoneinfo/Asia/Kathmandu
+  # 1m cache segment restore timeout to stop wasting resource time
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
 
+# workflow can only read this repo’s code but cannot change
+permissions:
+  contents: read
+  
 jobs:
   linters:
     name: Frappe Linter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
