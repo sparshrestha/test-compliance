@@ -1,6 +1,10 @@
 name: Build and Push amd64 Docker Image
 
 on:
+  workflow_run:
+    workflows: ["Frappe Linter - semgrep-rules", "CodeQL Advanced"]
+    types:
+      - completed
   push:
     branches:
       - master
@@ -21,7 +25,7 @@ permissions:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # runs only if both workflows succeed
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
