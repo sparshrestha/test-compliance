@@ -1,6 +1,7 @@
 [![Frappe Linter - semgrep-rules](https://github.com/sparshrestha/test-compliance/actions/workflows/semgrep-rules.yml/badge.svg)](https://github.com/sparshrestha/test-compliance/actions/workflows/semgrep-rules.yml)
 [![CodeQL Advanced](https://github.com/sparshrestha/test-compliance/actions/workflows/codeql.yml/badge.svg)](https://github.com/sparshrestha/test-compliance/actions/workflows/codeql.yml)
 [![Build and Push amd64 Docker Image](https://github.com/sparshrestha/test-compliance/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/sparshrestha/test-compliance/actions/workflows/docker-build-push.yml)
+[![docker pulls](https://img.shields.io/docker/pulls/yarsalabs/nepal-compliance.svg)](https://hub.docker.com/r/yarsalabs/nepal-compliance)
 
 # Nepal Compliance
 
