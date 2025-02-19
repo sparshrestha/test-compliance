@@ -1,6 +1,8 @@
-name: Frappe Linter - semgrep-rules
 # These rules guard against typical mistakes or bad practices while working on Frappe Framework apps.
-# https://github.com/frappe/semgrep-rules
+# This workflow uses Frappe Semgrep rules specific to Frappe Framework, licensed under the MIT License.
+# Copyright (c) 2021 Frappe Technologies Pvt. Ltd. <developers@frappe.io>. See LICENSE at https://github.com/frappe/semgrep-rules
+
+name: Frappe Linter - semgrep-rules
 
 on:
   push:
