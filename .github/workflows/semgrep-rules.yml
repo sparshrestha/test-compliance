@@ -12,6 +12,8 @@ on:
   
 env:
   TZ: /usr/share/zoneinfo/Asia/Kathmandu
+  # 1m cache segment restore timeout to stop wasting resource time
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
 
 # workflow can only read this repo’s code but cannot change
 permissions:
