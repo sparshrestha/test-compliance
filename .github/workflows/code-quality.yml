@@ -18,11 +18,11 @@ permissions:
 
 jobs:
   codeql:
-    name: CodeQL
+    name: CodeQL Advanced
     uses: ./.github/workflows/codeql.yml
 
   semgrep:
-    name: Semgrep
+    name: Frappe Linter - semgrep-rules
     uses: ./.github/workflows/semgrep-rules.yml
 
   check-status:
