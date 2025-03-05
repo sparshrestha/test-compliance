@@ -1,5 +1,5 @@
 name: New Bug Report
-description: File a bug report.
+description: Report a bug to help improve Nepal Compliance.
 labels: ["bug"]
 assignees:
   - octocat
@@ -8,9 +8,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping us to improve Nepal Compliance! This issue form is for reporting bugs only!
-        
-        If you have a feature or enhancement request, please use the [feature request][fr] section of our [GitHub Discussions][fr].
+        Thanks for helping us to improve Nepal Compliance! Please note that this issue form is only for bug reports.
+
+        If you have a **feature or enhancement request**, please use the [feature request][fr] section of our [GitHub Discussions][fr].
         
         [fr]: https://github.com/yarsa/nepal-compliance/discussions/new?category=feature-request
         
@@ -19,7 +19,7 @@ body:
       value: |
         **Tip:** Have you tried [searching](https://github.com/yarsa/nepal-compliance/issues) for similar issues? Duplicate issues are common.
 
-        **Are you reporting a security issue?** [Submit it here instead](https://github.com/yarsa/nepal-compliance/security/policy).
+        Are you reporting a **security issue?** [Submit it here instead](https://github.com/yarsa/nepal-compliance/security/policy).
   - type: markdown
     attributes:
       value: |
@@ -51,7 +51,6 @@ body:
       options:
         - latest/ docker
         - v0.1.0
-        - v0.2.0
         - v1.0.0
         - Other (specify in additional details)
       default: 0
@@ -83,13 +82,13 @@ body:
   - type: textarea
     attributes:
       label: Additional Details
-      description: Provide any additional details about your environment, such as OS, device type, etc.
+      description: Share any extra context, such as your OS, device type, or any specific configurations.
       placeholder: e.g., macOS Ventura, Windows 11, Ubuntu 22.04, mobile device, etc.
   
   - type: textarea
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      label: Relevant Log Output
+      description: Paste any relevant logs or error messages. This will be automatically formatted into codeblocks, so no need for backticks.
       render: shell
   
   - type: checkboxes
