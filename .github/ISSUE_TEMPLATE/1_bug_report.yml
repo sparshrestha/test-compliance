@@ -44,16 +44,14 @@ body:
     validations:
       required: true
       
-  - type: dropdown
+  - type: textarea
     attributes:
-      label: Version
-      description: What version of Nepal Compliance are you running?
+      label: Versions
+      description: Share the versions of your software stack running Nepal Compliance
       options:
-        - latest/ docker
-        - v0.1.0
-        - v1.0.0
-        - Other (specify in additional details)
-      default: 0
+        - Frappe version
+        - ERPNext version
+        - Nepal Compliance version
     validations:
       required: true
       
