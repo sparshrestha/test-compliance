@@ -48,7 +48,7 @@ body:
     attributes:
       label: Versions
       description: Share the versions of your software stack running Nepal Compliance
-      options:
+      placeholder:
         - Frappe version
         - ERPNext version
         - Nepal Compliance version
