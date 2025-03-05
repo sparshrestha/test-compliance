@@ -12,7 +12,7 @@ body:
         
         This issue form is for reporting bugs only!
         If you have a feature or enhancement request, please use the [feature request][fr] section of our [GitHub Discussions][fr].
-        [fr]: https://github.com/yarsa/nepal-compliance/discussions/categories/feature-request
+        [fr]: https://github.com/yarsa/nepal-compliance/discussions/new?category=feature-request
   - type: markdown
     attributes:
       value: |
