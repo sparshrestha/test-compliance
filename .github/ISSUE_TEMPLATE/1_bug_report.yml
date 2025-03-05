@@ -1,0 +1,117 @@
+name: New Bug Report
+description: File a bug report.
+title: "Bug: "
+labels: ["bug"]
+assignees:
+  - octocat
+  - additional-maintainer
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us to improve Nepal Compliance!
+        
+        Please fill out the details below so we can address the issue efficiently.
+        Please try to give your issue a good title. Try mentioning where you are having an issue and briefly describing the problem. Like this:
+        - `Dashboards: Template Variables break when I do X` or
+        - `Alerting: message templating plus Slack channel breaks when I do X`
+  - type: markdown
+    attributes:
+      value: |
+        **Tip:** Have you tried [searching](https://github.com/yarsa/nepal-compliance/issues) for similar issues? Duplicate issues are common.
+
+        **Are you reporting a security issue?** [Submit it here instead](https://github.com/yarsa/nepal-compliance/security/policy).
+  - type: markdown
+    attributes:
+      value: |
+       #
+
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: Steps to reproduce the behavior
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+      
+  - type: textarea
+    attributes:
+      label: What did you expect to happen?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you want to see!
+      value: "This was supposed to happen!"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: How do we reproduce it?
+      placeholder: "Steps to reproduce..."
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+      
+  - type: dropdown
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - Latest Docker
+        - v0.2.0
+        - v0.3.0
+        - v1.0.0
+        - Other (please specify in the logs section)
+      default: 0
+    validations:
+      required: true
+      
+  - type: dropdown
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Firefox
+        - Other (please specify in the logs section)
+        
+  - type: dropdown
+    attributes:
+      label: How often does this bug occur?
+      description: Select how frequently you experience this bug.
+      options:
+        - Always
+        - Sometimes
+        - Rarely
+        - Cannot reproduce anymore
+
+  - type: textarea
+    attributes:
+      label: Environment Details
+      description: Provide any additional details about your environment, such as OS, device type, etc.
+      placeholder: e.g., macOS Ventura, Windows 11, Ubuntu 22.04, mobile device, etc.
+  
+  - type: textarea
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  
+  - type: textarea
+    attributes:
+      label: Screenshots or Screen Recording
+      description: If applicable, add screenshots or a screen recording to help explain the issue.
+      placeholder: Drag and drop images here or attach a file.
+  
+  - type: checkboxes
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/yarsa/nepal-compliance/blob/master/CODE_OF_CONDUCT.md). 
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
